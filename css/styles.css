@@ -17,16 +17,8 @@
   --heroe-overlay: rgba(47, 48, 58, 0.4);
   --project-overlay: rgba(33, 150, 243, 0.9);
   --modal-over-color: rgba(0, 0, 0, 0.2);
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
+  --footer-social-background: rgba(255, 255, 255, 0.1);
+  --about-gradient-color: rgba(47, 48, 58, 0.8);
 }
 
 /* Стили для обнуления верхних отступов у элементов */
@@ -289,7 +281,7 @@ svg {
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
-
+padding: 40px;
   background-color: var(--background-white);
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -315,9 +307,16 @@ svg {
 }
 
 .modal-close-button-icon {
+  display: block;
   width: 11px;
   height: 11px;
   fill: currentColor;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .advantages-flex {
@@ -380,8 +379,9 @@ svg {
   bottom: 0;
   width: 100%;
   height: 70px;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+  background-image: linear-gradient: (to right, var(--about-gradient-color), var(--about-gradient-color));
 }
+
 
 .about-pic-discript p {
   text-align: center;
@@ -393,7 +393,7 @@ svg {
 .section-title {
   font-size: 36px;
   line-height: 1.2;
-  /* text-align: center; */
+  
   color: var(--header-color);
   margin-bottom: 50px;
 }
@@ -406,7 +406,6 @@ svg {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
-  /* text-align: center; */
   padding-top: 30px;
   color: var(--header-color);
 }
@@ -544,7 +543,8 @@ svg {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--footer-social-background);
+
   color: var(--light-color-for-dark-theme-logo);
 }
 
@@ -569,11 +569,13 @@ svg {
   line-height: 1.7;
   color: var(--footer-contact-color);
 }
+
 .footer-contact:hover,
 .footer-contact:focus,
 .footer-contact:active {
   color: var(--accent-color);
 }
+
 .footer-adress {
   font-style: normal;
   text-decoration: none;
@@ -626,6 +628,7 @@ svg {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
+
 .portfolio-buttons:hover,
 .portfolio-buttons:focus {
   background-color: var(--accent-color);
@@ -699,7 +702,7 @@ svg {
   line-height: 1.56;
   color: var(--light-color-for-dark-theme-logo);
   background-color: var(--project-overlay);
-  overflow: auto;
+  overflow: hidden;
   opacity: 0;
 }
 
