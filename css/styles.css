@@ -15,6 +15,8 @@
   --social-madia-logo-color: #afb1b8;
   --heroe-background: #c4c4c4;
   --heroe-overlay: rgba(47, 48, 58, 0.4);
+  --project-overlay: rgba(33, 150, 243, 0.9);
+  --modal-over-color: rgba(0, 0, 0, 0.2);
 }
 
 html {
@@ -202,6 +204,21 @@ use {
   color: var(--accent-color);
 }
 
+.current.underline {
+  position: relative;
+}
+
+.underline::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+  bottom: 0px;
+}
+
 .heroe {
   position: relative;
   padding-top: 200px;
@@ -221,12 +238,6 @@ use {
   background-position: center;
   background-size: cover;
 }
-
-/* .heroe::before { */
-/* position: absolute; */
-/* width: 100%; */
-/* height: 100px; */
-/* background-color: #000000; */
 
 .heroe-header {
   width: 700px;
@@ -262,6 +273,50 @@ use {
   color: var(--light-color-for-dark-theme-logo);
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-over-color);
+}
+
+.modal-box {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  justify-content: flex-end;
+  background-color: var(--background-white);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close-button {
+  padding: 0;
+  display: flex;
+  margin: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--background-white);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-button svg {
+  width: 11px;
+  height: 11px;
+  fill: #000000;
+}
+
 .advantages-flex {
   display: flex;
   text-align: left;
@@ -280,7 +335,7 @@ use {
   height: 70px;
 }
 
-.about-icon-block {
+.adv-icon-block {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,6 +363,28 @@ use {
 .about-box {
   display: flex;
   justify-content: space-between;
+}
+
+.about-pic {
+  position: relative;
+}
+
+.about-pic-discript {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+}
+
+.about-pic-discript p {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--light-color-for-dark-theme-logo);
 }
 
 .section-title {
@@ -586,6 +663,10 @@ use {
   cursor: pointer;
 }
 
+.project-item-link:hover .project-over-text {
+  opacity: 1;
+}
+
 .project-item:nth-child(3n) {
   margin-right: 0px;
 }
@@ -599,6 +680,24 @@ use {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.03em;
+}
+
+.project-over-contain {
+  position: relative;
+}
+
+.project-over-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--light-color-for-dark-theme-logo);
+  background-color: var(--project-overlay);
+  overflow: auto;
+  opacity: 0;
 }
 
 .project-header {
