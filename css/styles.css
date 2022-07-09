@@ -160,6 +160,7 @@ svg {
   text-decoration: none;
   padding-top: 32px; /* применение именно для линка увеличивает рабочую зону ссілки*/
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo {
@@ -180,6 +181,7 @@ svg {
   padding-top: 32px;
   /* применение именно для линка увеличивает рабочую зону ссілки*/
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contact-link:hover,
@@ -249,19 +251,18 @@ svg {
   color: var(--light-color-for-dark-theme-logo);
   background-color: var(--accent-color);
   border: none;
-
   cursor: pointer;
   padding: 10px 32px;
   border-radius: 4px;
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.06em;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-button:hover,
 .order-button:focus {
   background-color: var(--header-color);
-  color: var(--light-color-for-dark-theme-logo);
 }
 
 .modal-overlay {
@@ -311,6 +312,13 @@ svg {
   width: 11px;
   height: 11px;
   fill: currentColor;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  color: var(--light-color-for-dark-theme-logo);
+  background-color: var(--accent-color);
+  border-color: transparent;
 }
 
 .is-hidden {
@@ -412,6 +420,7 @@ svg {
   padding-top: 30px;
   color: var(--header-color);
 }
+
 .team-member-text {
   font-weight: 400;
   font-size: 16px;
@@ -446,6 +455,8 @@ svg {
   border-radius: 50px;
   height: 44px;
   width: 44px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-box svg {
@@ -484,6 +495,8 @@ svg {
   padding: 16px 32px;
   border: 1px solid var(--social-madia-logo-color);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-list-item svg {
@@ -547,8 +560,8 @@ svg {
   height: 44px;
   border-radius: 50%;
   background-color: var(--footer-social-background);
-
   color: var(--light-color-for-dark-theme-logo);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-links-block li + li {
@@ -571,6 +584,7 @@ svg {
   text-decoration: none;
   line-height: 1.7;
   color: var(--footer-contact-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contact:hover,
@@ -622,6 +636,10 @@ svg {
   line-height: 1.8;
   letter-spacing: 0.03em;
   color: var(--header-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-buttons.active {
@@ -638,7 +656,6 @@ svg {
   color: var(--light-color-for-dark-theme-logo);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 
 .flex-menu-item:not(:last-child) {
@@ -663,6 +680,7 @@ svg {
 
 .project-item-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item-link:hover,
@@ -694,6 +712,7 @@ svg {
 .project-over-contain {
   position: relative;
   overflow: hidden;
+  display: block;
 }
 
 .project-over-text {
@@ -701,7 +720,7 @@ svg {
   top: 0;
   width: 100%;
   height: 100%;
-  transform: translatey(100%);
+  transform: translatey(101%);
   padding: 63px 24px;
   font-size: 18px;
   line-height: 1.56;
